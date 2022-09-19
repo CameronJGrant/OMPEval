@@ -1,8 +1,8 @@
 # distutils: language = c++
 # cython: c_string_type=unicode, c_string_encoding=utf8
 
-from OMPEval cimport EquityCalculator
-from OMPEval cimport CardRange
+from PyOMP cimport EquityCalculator
+from PyOMP cimport CardRange
 from libcpp.vector cimport vector
 
 cdef class PyCardRange:
