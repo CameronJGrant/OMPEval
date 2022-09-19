@@ -1,1 +1,9 @@
 build/*
+/lib
+/ctest.cpp
+Makefile
+runtest.sh
+test_cython.sh
+test_cython.py
+/*.so
+PyOMP.cpp
