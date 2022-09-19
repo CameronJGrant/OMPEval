@@ -32,9 +32,10 @@ cdef class PyEquityCalculator:
 		else:
 			dead = 0
 
+		# cdef void function(Results) NULL
+
 		#todo Finish making pointer work.
-		return self.c_calc.start(v, board, dead, enumerate_all, stdev_target#, update_interval, thread_count
-								 )
+		return self.c_calc.start(v, board, dead, enumerate_all, stdev_target, NULL, update_interval, thread_count)
 
 	def wait(self):
 		self.c_calc.wait()

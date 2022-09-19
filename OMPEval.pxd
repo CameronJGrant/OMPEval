@@ -53,10 +53,9 @@ cdef extern from "omp/EquityCalculator.h" namespace "omp":
                    uint64_t deadCards,
                    bool enumerateAll,
                    double stdevTarget,
-                   # FPtr,
-                   # double updateInterval,
-                   # unsigned threadCount
-                   )
+                   void *,
+                   double updateInterval,
+                   unsigned threadCount)
         void wait()
         Results getResults()
 
