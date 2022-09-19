@@ -5,7 +5,7 @@ This is a fork of the abandoned OMPEval project, an extremely fast Texas Hold'em
 # Quick start
 
 I'm in the very early stages but the package can be built and run using
-```
+```shell
 python setup.py build_ext --inplace
 ```
 
