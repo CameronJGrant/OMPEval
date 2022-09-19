@@ -23,6 +23,7 @@ cdef class PyEquityCalculator:
 		kwargs = {}
 		for i in card_range:
 			v.push_back(CardRange(i))
+
 		if board_cards:
 			board = CardRange.getCardMask(board_cards)
 		else:
@@ -33,9 +34,6 @@ cdef class PyEquityCalculator:
 		else:
 			dead = 0
 
-		# cdef void function(Results) NULL
-
-		#todo Finish making pointer work.
 		return self.c_calc.start(v, board, dead, enumerate_all, stdev_target, NULL, update_interval, thread_count)
 
 	def wait(self):
@@ -43,13 +41,23 @@ cdef class PyEquityCalculator:
 
 	def get_results(self):
 		c_results = self.c_calc.getResults()
-		results = {'players': c_results.players, 'equity': c_results.equity, 'wins': c_results.wins,
-				   'ties': c_results.ties, 'wins_by_player_mask': c_results.winsByPlayerMask, 'hands': c_results.hands,
-				   'interval_hands': c_results.intervalHands, 'speed': c_results.speed,
-				   'interval_speed': c_results.intervalSpeed, 'time': c_results.time,
-				   'interval_time': c_results.intervalTime, 'stdev': c_results.stdev,
-				   'stdev_per_hand': c_results.stdevPerHand, 'progress': c_results.progress,
+		results = {'players': c_results.players,
+				   'equity': c_results.equity,
+				   'wins': c_results.wins,
+				   'ties': c_results.ties,
+				   'wins_by_player_mask': c_results.winsByPlayerMask,
+				   'hands': c_results.hands,
+				   'interval_hands': c_results.intervalHands,
+				   'speed': c_results.speed,
+				   'interval_speed': c_results.intervalSpeed,
+				   'time': c_results.time,
+				   'interval_time': c_results.intervalTime,
+				   'stdev': c_results.stdev,
+				   'stdev_per_hand': c_results.stdevPerHand,
+				   'progress': c_results.progress,
 				   'preflop_combos': c_results.preflopCombos,
-				   'evaluated_preflop_combos': c_results.evaluatedPreflopCombos, 'evaluations': c_results.evaluations,
-				   'enumerate_all': c_results.enumerateAll, 'finished': c_results.finished}
+				   'evaluated_preflop_combos': c_results.evaluatedPreflopCombos,
+				   'evaluations': c_results.evaluations,
+				   'enumerate_all': c_results.enumerateAll,
+				   'finished': c_results.finished}
 		return results
