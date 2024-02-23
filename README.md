@@ -20,7 +20,7 @@ python setup.py build_ext --inplace
 from pyomp import EquityCalculator
 
 ec = EquityCalculator()
-ec.run(['2c8h', '2s8d', '66+', 'ako', '7ko+', 'aa'], 'jctc1d')
+ec.run(['2c8h', '2s8d', '66+', 'ako', '7ko+', 'aa'], 'jctcad')
 
 for i, equity in enumerate(ec.equity):
     print(f'Player {i}: {equity:.2%}')
