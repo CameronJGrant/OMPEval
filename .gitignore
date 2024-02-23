@@ -11,4 +11,3 @@ PyOMP.cpp
 cmake-build-debug
 cmake-build-release
 dist
-*.pyd
