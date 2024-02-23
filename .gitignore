@@ -7,3 +7,7 @@ test_cython.sh
 test_cython.py
 /*.so
 PyOMP.cpp
+.idea
+cmake-build-debug
+cmake-build-release
+dist
