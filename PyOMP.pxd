@@ -31,10 +31,10 @@ cdef extern from "omp/EquityCalculator.h" namespace "omp":
         EquityCalculator() except +
         struct Results:
             unsigned players
-            double equity[6]
-            uint64_t wins[6]
-            double ties[6]
-            uint64_t winsByPlayerMask[6]
+            double equity[9]
+            uint64_t wins[9]
+            double ties[9]
+            uint64_t winsByPlayerMask[9]
             uint64_t hands, intervalHands
             double speed, intervalSpeed
             double time, intervalTime
